@@ -40,6 +40,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
     }
 
     //responsible for bidnign data to a particular view folder
+    @NonNull
+    @org.jetbrains.annotations.NotNull
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull ItemsAdapter.ViewHolder holder, int position) {
         //grab the tiem at the position
@@ -72,7 +74,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
             tvItem.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    longClickListener.onItemLongClicked(getAdapterPosition());
+                    longClickListener.onItemLongClicked(getBindingAdapterPosition());
                     return true;
                 }
             });
